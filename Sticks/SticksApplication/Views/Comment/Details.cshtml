@@ -1,0 +1,13 @@
+﻿@model IEnumerable<SticksApplication.Models.Comment>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Comment Details</h2>
+@foreach(var comment in Model)
+ {
+    <div>ID: @comment.CommentId</div>
+    <div>Content: @comment.Description</div>
+    <div>Blog Post ID: @comment.BlogPostId</div>
+    <div>Posted: @comment.DateAdded.ToString()</div>
+ }

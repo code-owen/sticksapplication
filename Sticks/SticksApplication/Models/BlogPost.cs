@@ -33,7 +33,7 @@ namespace SticksApplication.Models
         public ICollection<Tag> Tags { get; set; }
 
         //A BlogPost can have many Comments
-        public ICollection<BlogPostComment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 
     public class BlogPostDto
@@ -42,10 +42,18 @@ namespace SticksApplication.Models
 
         public string Heading { get; set; }
 
+        public string Content { get; set; }
+
+        public string ShortDescription { get; set; }
+
         public string Author { get; set; }
+
+        public string FeaturedImageUrl { get; set; }
 
         public DateTime PublishedDate { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
     }
 }

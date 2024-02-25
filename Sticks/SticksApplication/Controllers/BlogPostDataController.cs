@@ -67,7 +67,11 @@ namespace SticksApplication.Controllers
                 BlogPostId=BlogPost.BlogPostId,
                 Heading=BlogPost.Heading,
                 Author=BlogPost.Author,
-                PublishedDate=BlogPost.PublishedDate
+                PublishedDate=BlogPost.PublishedDate,
+                Comments=BlogPost.Comments,
+                Content=BlogPost.Content,
+                ShortDescription=BlogPost.ShortDescription,
+                FeaturedImageUrl=BlogPost.FeaturedImageUrl
             };
             if (BlogPost == null)
             {

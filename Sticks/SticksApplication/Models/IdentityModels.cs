@@ -11,7 +11,7 @@ namespace SticksApplication.Models
     public class ApplicationUser : IdentityUser
     {
         //A User can make many Comments
-        public virtual ICollection<BlogPostComment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -32,8 +32,8 @@ namespace SticksApplication.Models
         //Add BlogPost entity to system
         public DbSet<BlogPost> Blogs { get; set; }
 
-        //Add BlogPostComment entity to system
-        public DbSet<BlogPostComment> BlogComments { get; set; }
+        //Add Comment entity to system
+        public DbSet<Comment> Comments { get; set; }
 
         //Add Tag entity to system
         public DbSet<Tag> Tags { get; set; }

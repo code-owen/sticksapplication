@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SticksApplication.Models.Tag>
+
+
+<h2>Blogs</h2>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+
+                <div class="mb-3">         
+                            <a href="/tags/@Model.Name"></a>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-body">
+                           
+                            
+                                @foreach (var blogPost in Model.BlogPosts)
+                                {
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div>
+                                                <a href="/BlogPost/@blogPost.Heading"></a>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <!--<span class="text-secondary"></span>-->
+                                                <span class="text-secondary">@blogPost.Author</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                }
+                           
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -8,7 +8,7 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.BlogPostComments",
+                "dbo.Comments",
                 c => new
                     {
                         CommentId = c.Int(nullable: false, identity: true),
@@ -67,18 +67,18 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.BlogPostComments", "ApplicationUser_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Comments", "ApplicationUser_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.TagBlogPosts", "BlogPost_BlogPostId", "dbo.BlogPosts");
             DropForeignKey("dbo.TagBlogPosts", "Tag_TagId", "dbo.Tags");
-            DropForeignKey("dbo.BlogPostComments", "BlogPostId", "dbo.BlogPosts");
+            DropForeignKey("dbo.Comments", "BlogPostId", "dbo.BlogPosts");
             DropIndex("dbo.TagBlogPosts", new[] { "BlogPost_BlogPostId" });
             DropIndex("dbo.TagBlogPosts", new[] { "Tag_TagId" });
-            DropIndex("dbo.BlogPostComments", new[] { "ApplicationUser_Id" });
-            DropIndex("dbo.BlogPostComments", new[] { "BlogPostId" });
+            DropIndex("dbo.Comments", new[] { "ApplicationUser_Id" });
+            DropIndex("dbo.Comments", new[] { "BlogPostId" });
             DropTable("dbo.TagBlogPosts");
             DropTable("dbo.Tags");
             DropTable("dbo.BlogPosts");
-            DropTable("dbo.BlogPostComments");
+            DropTable("dbo.Comments");
         }
     }
 }
